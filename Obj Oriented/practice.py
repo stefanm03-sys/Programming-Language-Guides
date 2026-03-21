@@ -26,6 +26,13 @@ elif num != int(input("Enter a number to compare with: ")): # This checks if the
 else: # This is the else statement that will execute if none of the above conditions are met
     print("Invalid input!") # This prints if the input is invalid
 
+even_numbers = [] # This creates an empty list to store even numbers
+for i in range(10): # This is a loop that will run 10 times. i is the variable that will take on the values from 0 to 9
+    if i % 2 == 0: # This checks if i is an even number by checking if the remainder when i is divided by 2 is 0
+        even_numbers.append(i) # If i is even, it is added to the even_numbers list using the append() method
+
+print("Even numbers:", even_numbers) # This prints the list of even numbers
+
 class variables: # creates a class with the name variables
     def __init__(self, name, value): # This is the constructor method that initializes the class with self, name, and value parameters
         "The __init__ method is called when an instance of the class is created. It initializes the instance variables with the provided values. Self is a reference to the current instance of the class, and it allows you to access the instance variables and methods within the class. Name and value are parameters that are passed when creating an instance of the class, and they are used to set the instance variables self.name and self.value."
