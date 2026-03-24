@@ -1,7 +1,7 @@
-/* Runtime
-javac "Obj Oriented\practice.java"
-java -cp "Obj Oriented" practice
-*/ // This is a multiline comment. The code between /* */ is not executed
+
+/*
+This is a multiline comment. The code between the slash and asterisk is not executed
+*/
 
 import java.io.Console;
 import javax.swing.JOptionPane;
