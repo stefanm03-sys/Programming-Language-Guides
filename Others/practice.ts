@@ -14,7 +14,7 @@ function addNum(a: number, b: number) {
     console.log(i)
 } // A function to add numerous values together
 
-function addStr(a: string, b: string): string {
+function addStr(a: string, b: string) {
     let i = null
-    
+    // Unfinished
 } // A function to merge strings together

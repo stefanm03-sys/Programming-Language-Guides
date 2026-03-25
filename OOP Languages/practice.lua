@@ -38,7 +38,7 @@ num = {0, 1, 2, 3, 4, 5} -- This line creates a table with the values 0 through 
 for i, v in ipairs(num) do -- This line starts a generic loop that iterates over the elements of the 'num' table
     rand = math.random(0, 4) -- This line prints the current element of the 'num' table during each iteration
     print("Possible Number: ", num[rand]) -- This line prints each element of the 'num' table as a possible number
-    break -- This forcefully exits the loop after the first iteration, so only the first element of the 'num' table will be printed
+    break -- This forcefully exits the loop after the first iteration, so only the first chosen element of the 'num' table will be printed
 end
 tonumber(input) -- This line converts the user's input from a string to a numeric type, if possible
 
@@ -54,7 +54,7 @@ print("Possible Number: ", math.random(1, 5)) -- This line generates a random nu
 io.write("The console is choosing a number between 1 and 5. Guess: ")
 guess = io.read()
 tonumber(guess)
-cpu = math.random(1, 5)
+cpu = math.random(1, 5) -- This generates a random numbet between 1 and 5
 tonumber(cpu)
 print(cpu)
 if guess == cpu then
