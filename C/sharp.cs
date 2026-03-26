@@ -10,15 +10,16 @@ Console.WriteLine(b); // Prints b
 placeholder -> {0}
 This (the {0}) is an 'index placeholder', essentially a regular placeholder value. This will return an error however and should not be used with variables unless used like on line 14 and 15
 */
-Console.Write(a + c); // This prints out data, in this case it adds a and c. 
-
+Console.Write(a + c); // This prints out data, in this case it adds a and c
 var e = "world"; // This assigns e with "world"
 Console.WriteLine("Hello {0}!", e); // This replaces the value of {0} with e. You can add more variables sequentially with commas
 
+//
+
 if (c > a) // This compares a and c, does not need a semi colon
-{ // Prints out "c is greater!" if c is greater
+{ // Prints out "c is greater!" if c is greater. The opening brace goes below the condition
     Console.WriteLine("c is greater!");
-}
+} // The closing brace goes here to close the condition
 else if (a > c) // Compares a and c again
 { // Prints out "a is greater!" if a is greater
     Console.WriteLine("a is greater!");

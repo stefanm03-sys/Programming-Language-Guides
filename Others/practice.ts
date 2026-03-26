@@ -6,8 +6,9 @@ This is a multi line comment in TS
 let x = 2; // A simple way to define a variable that can be changed. The semicolon (;) indicates an individual statement
 const y = 3; // A way to define a consistent variable (wont change)
 console.log(x + y); // A printing statement in TypeScript
+let z: string = "TypeScript"; // A variable defined using static typing (the : symbol and string = "Typescript")
 
-let z: string = "TypeScript"; // A variable defined using static typing (the : symbol /and string =)
+//
 
 function addNum(a: number, b: number) {
     let i = a + b;
@@ -15,17 +16,17 @@ function addNum(a: number, b: number) {
 } // A function to add numerous values together
 
 function compare(a: string, b: string) {
-    let i = null;
-    let j = null;
+    let i = a;
+    let j = b;
     let binA = [];
     let binB = [];
     binA.push(i)
     binB.push(j)
     if (binA == binB) {
-        console.log("Found a match! ${i} matches ${j} in function.");
+        console.log("Found a match! ${i} matches ${j} in comparison.");
     } else {
         console.log("No matches found! Returned null or is considered false.")
     }
-} // A function to compare strings
+} // A function to compare full strings to see if they are the same
 
 compare("hello", "world")
