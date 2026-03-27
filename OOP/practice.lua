@@ -29,6 +29,12 @@ end -- This marks the end of the loop block
 
 --
 
+--[[
+* does multiplication
+/ does division
+% returns the remainder of division
+]]--
+
 function printValues(number)
     tonumber(number) -- This line converts the input 'number' to a numeric type, if it is not already
     for i = 0, number do -- This line starts a numeric loop that will iterate from 0 to the value of 'number'
@@ -49,7 +55,6 @@ for i, v in ipairs(num) do -- This line starts a generic loop that iterates over
 end
 
 input = tonumber(input) -- This line converts the user's previous input from a string to a numeric type, if possible
-
 if input == num[rand] then -- This is a condition that checks if the user's input is equal to the randomly selected number from the 'num' table
     print("You guessed correctly!") -- This line prints a message if the user's guess is correct
 else 
@@ -63,7 +68,7 @@ print("Possible Number:", math.random(1, 5)) -- This line generates a random num
 io.write("The console is choosing a number between 1 and 5. Guess: ")
 guess = io.read()
 guess = tonumber(guess)
-cpu = math.random(1, 5) -- This generates a random numbet between 1 and 5
+cpu = math.random(1, 5) -- This generates a random number between 1 and 5
 print(cpu)
 if guess == cpu then
     print("You guessed correctly!")

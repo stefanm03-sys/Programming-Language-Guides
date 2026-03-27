@@ -8,7 +8,7 @@ html {
 
 /* This brace closes the customization block for html */
 
-h1 {
+h1 { 
     /* This styles the header 1 element, this brace opens the customization block */
     color: blue;
     /* This sets the text color to blue, but you can use any form of color specification */
@@ -24,8 +24,8 @@ p {
     /* This styles the paragraph element */
     color: green;
     /* This sets the text color to green */
-    font-size: 16px;
-    /* This sets the font size to 16 pixels */
+    font-size: 16vw;
+    /* This sets the font size to 16 vw (viewport width) */
     text-align: center;
     /* This aligns the text to the middle */
 }
@@ -36,8 +36,8 @@ p {
     /* This styles the element with the id "p2". Use a hash before p to indicate an id */
     color: red;
     /* This sets the text color to red */
-    font-size: 18px;
-    /* This sets the font size to 18 pixels */
+    font-size: 6em;
+    /* This doubles the size of the font based on it's default size */
     text-align: center;
     /* This aligns the text to the center */
 }
@@ -48,8 +48,8 @@ p {
     /* This styles the elements with the class "p3". Use a period before p to indicate a class */
     color: rgb(255, 255, 0);
     /* This sets the text color to purple */
-    font-size: 14px;
-    /* This sets the font size to 14 pixels */
+    font-size: 10rem;
+    /* This sets the font size to 14 rem, which is root from the html */
     text-align: center;
     /* This centers the text */
 }
@@ -61,8 +61,7 @@ p {
     /* This sets the background color of the button to orange */
     color: white;
     /* This sets the text color of the button to white */
-    font-size: 16px;
-    /* This sets the font size of the button text to 16 pixels */
+    font-size: 14px;
     padding: 10px 20px;
     /* This adds padding inside the button, with 10 pixels on top and bottom, and 20 pixels on left and right */
     border: none;

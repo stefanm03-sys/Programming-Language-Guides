@@ -13,6 +13,12 @@ for i in range(5): # This is a loop that will run 5 times. i is the variable tha
 
 #
 
+"""
+* indicates multiplied values
+/ indicates divided values
+% indicates that the remainder from division is returned instead of the value of division from two values
+"""
+
 def add_numbers(a, b): # This is a function that takes two parameters, a and b
     if a and b == None:
         a = input("Enter the first number, a: ") # This prompts the user to enter the first number and stores it in variable a

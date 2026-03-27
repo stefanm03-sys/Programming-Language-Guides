@@ -2,7 +2,8 @@
 
 #include <iostream>
 int main() {
-    // This is a single line comment. This line prints "Hello, World!" to the console
-    std::cout << "Hello, World!" << std::endl;
+    // This line prints "Hello, World!" to the console
+    std::cout << "Hello, World!" << // What..?
+    std::endl; // I have no idea but endl is end line
     return 0;
 }
