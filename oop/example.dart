@@ -8,7 +8,6 @@ double b = 2.5 // Assigns a decimal value
 String c "Sup." // Assigns a string
 bool d = true // Assigns either boolean value
 e = 1 // Basic assignment
-
 print(a + b) // The easiest printing function, similar to other programming languages. Here, it adds a and b
 
 //

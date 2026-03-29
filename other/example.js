@@ -70,7 +70,7 @@ Replace 2 with 0 to add elements without removing any
 
 for (let i = 0; i <= 5; i++) { /*
      This is a generic for loop. i is the initializer and a local variable to increment. 
-     i <= 5 is the condition to use. 
+     i <= 5 is the condition to use
      i++ is incrementing (use i-- to decrement)
      */
     console.log("Index:", i);
@@ -80,7 +80,7 @@ let array = ["string", "boolean", "integer", "float"]
 for (const item of array) { /*
     This is a 'for .. of' loop with a variable "item" to take the value of the array items when cycled
     */
-    console.log(item); continue; // 'continue' skips the next line
+    console.log("Index:", item); continue; // 'continue' skips the next line
     console.log("Array Item:", item); // Avoids printing this line out
 }
 
@@ -95,7 +95,7 @@ do { /*
     }
 } while (true)
 
-let i = 0;
+
 while (true) { /*
      This is a while loop. It runs using a condition in parenthesis for as long as it is not false
      */
@@ -103,9 +103,8 @@ while (true) { /*
         console.log("Index:", i);
         i++; // This increments the value i
     } while (i < 10) // Condition the "do" operation should run on
-    console.log(x); // This prints the value of x
     if (i >= 10) { // Condition to end the loop using break
-        console.log("x is above set limit!")
+        console.log("i is above set limit!")
         break // Forcefully ends the loop
     }
 }
@@ -117,7 +116,7 @@ Places a default pop up on your device with the prompt and textbox to type in. I
 */
 console.log(yourStr);
 alert("You reached an alert!"); // Summons a default pop up with text displayed
-let ans = confirm("Continue?"); // Should display options like "OK" and "Cancel"
+let ans = confirm("Continue?"); // Should display options like "OK" and "Cancel" with a prompt
 if (ans) { // Logs the answer as true if "Ok" was pressed
     console.log("Ok!")
 } else { // Returns other code if operation is cancelled

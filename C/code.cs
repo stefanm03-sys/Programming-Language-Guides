@@ -1,36 +1,9 @@
 // This is a C Sharp comment
 using System; // Imports namespace
 
-/* 
-Classes are normally what you should use for programs in C Sharp
-Keeping everything inside a class is a common structure
-When making apps and games, classes are required
+/*
+The code below will not run because it had no program entry point. It is not supposed to run, and only demonstrates syntax and structure of C sharp.
 */
-class MyProgram // Creates a class named "MyProgram"
-{
-    static void Main() /*
-    static indicates that a method belongs to a class instead of objects
-    void indicates the method returns no value
-    Main() is the main entry point of the program
-    */
-    {
-        Console.WriteLine("Hello program!");
-        static int Multiply(int a, int b)
-        {
-            /*
-            static here defines a function
-            int defines the data type to use
-            From there, you make a function like the example above with your parameters
-            */
-            Console.WriteLine($"Product Of Values: {a * b}");
-            return a * b;
-        } 
-        Multiply(1, 2); // Calls your function
-        
-    }
-}
-
-MyProgram.Main() // Calls the main method of your class to run your program
 
 var a = 1; // var lets the compiler infer the variable type. The semi colon is required for nearly all statements, or errors will be present
 var b = "2"; // This var has a string
@@ -104,7 +77,7 @@ var n = 3;
 while (m > n) // While loops iterate if the condition is true for the loop
 {
     Console.WriteLine($"Incrementing n.. {n}");
-    int v = n++; // Uses a local variable v to increment the value of n using n++
+    int n = n++; // This defines n locally
     if (n > 5)
     {
         Console.WriteLine($"n exceeded value of m! n is: {n}");

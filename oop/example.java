@@ -1,6 +1,6 @@
-
+// This ia a Java comment
 /*
-This is a multiline comment. The code between the slash and asterisk is not executed
+This is a multi line comment
 */
 
 import java.io.Console;

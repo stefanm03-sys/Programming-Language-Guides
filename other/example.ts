@@ -3,7 +3,7 @@
 This is a multi line comment in TS
 */
 
-// TypeScript is JavaScript with static typing and extra tooling
+// TypeScript is JavaScript with static typing and extra tooling. Read JavaScript first!
 
 let e = 2; // A simple way to define a variable that can be changed. The semicolon (;) indicates an individual statement
 const d = 3; // A way to define a consistent variable (wont change)
