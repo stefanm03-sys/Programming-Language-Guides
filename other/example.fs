@@ -18,4 +18,5 @@ let describe n = // This defines a variable with conditions, not exactly a funct
     elif n = 0 then "zero" // If n is equal to 0, return "zero"
     else "negative" // Checks if the value of n is not greater or equal, and prints "negative"
 
-printfn "-5 is %s" (describe -5) // This..
+printfn "-5 is %s" (describe -5) // This calls the variable
+

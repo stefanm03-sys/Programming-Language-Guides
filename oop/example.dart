@@ -117,7 +117,7 @@ mixin Logger { // mixin allows reusable code without external inheritance
     }
 }
 
-class Circle extends Shape with Logger implements Describable { // extends Shape, mixes Logger, and implements Describable
+class Circle extends Shape with Logger implements Describable { // extends Shape, mixes Logger, and implements Describable methods
     double radius;
     Circle(this.radius);
 

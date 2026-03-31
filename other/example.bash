@@ -53,8 +53,11 @@ calc "*" 5 2 # This calls the function with the parameters
 Below are commands for running CLI programs using shell commands.
 These -(flags) and --(long flags) modify the commands and are generally the same for each bash command, but some are unique.
 
+#program -v # Common way to print the version of a package or program
+
 cd #file
-# Replace '#file' with your file or folder path to navigate to it. cd is Change Directory.
+# Replace '#file' with your file or folder path to navigate to it. cd is Change Directory. 
+cd C:/EXAMPLE/EXAMPLE/LOCATIONEXAMPLE
 
 pwd 
 # Prints your current directory. pwd is Print Working Directory.
@@ -81,7 +84,7 @@ rm #file
 rm -r #dir # Remove directory
 rm -f #file # Force delete item
 
-head / tail # Print the first or last 10 lines of a file
+head / tail #file # Print the first or last 10 lines of a file
 
 grep "search term" #file
 # Find a term in a target file

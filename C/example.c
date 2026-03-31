@@ -33,6 +33,8 @@ int main(void) { /*
 
     int nums[] = {1, 2, 3}; // Declares an array of integers
     printf("First element: %d\n", nums[0]); // Accesses the first element
+    
+    
 
-    return 0; // Returns 0
+
 }
