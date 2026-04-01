@@ -239,4 +239,11 @@ date # Current date/time
 history | tail # Recent command history
 
 find /var/log -name "*.log" # Find log files by pattern
+ls -R # Recursive list of files and directories
+du -sh . # Show size of current directory
+
+# Example server start commands (printed only)
+echo python -m http.server 8000
+echo node server.js
+echo php -S localhost:8000
 EXAMPLES

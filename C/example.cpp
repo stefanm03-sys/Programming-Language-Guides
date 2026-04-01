@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 int modulus(int a, int b) { // Define a simple division function that returns remainder. Should be outside of main() to avoid errors
     std::cout << "Dividing.." << std::endl;
@@ -70,6 +71,23 @@ int main() { // Define a main method inside the program. int means the program r
 
     char items[2] = {'a', 'b'}; // Declare an array of characters. The [2] indicates the generic numeric value of items
     std::cout << "Char One: " << items[0] << std::endl; // Print the index value of the items (first one is always 0)
+
+    /*
+    This point on are server and OS functions
+    */
+
+    std::ofstream out("demo.txt"); // Write to a file
+    out << "Hello from C++ file I/O\n";
+    out.close();
+    // Close the file using out.close();
+
+    std::ifstream in("demo.txt"); // Read from a file
+    std::string line;
+    if (std::getline(in, line)) { // Find a line and read it
+        std::cout << "Read line: " << line << std::endl;
+    }
+    in.close();
+    // Exit using in.close()
 
     return 0; // Successful exit status
 }

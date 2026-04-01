@@ -125,7 +125,7 @@ class Circle extends Shape with Logger implements Describable { // extends Shape
     double area() => 3.14159 * radius * radius; // Implements the abstract class
 
     @override
-    String describe() => "Circle of radius $radius"; // Describes from the Describad
+    String describe() => "Circle of radius $radius"; // Describes from the Describad method
 }
 
 void main() { // Calls a basic main method for a process

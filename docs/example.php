@@ -81,14 +81,28 @@ function divide(int $a, int $b) { // Use functions for custom code, the int decl
 divide(10, 0); // Returns an error
 divide(20, 5); // Returns 4
 
-/* 
+
+/*
+File I/O and simple server example commands
+*/
+
+$path = __DIR__ . "/demo.txt"; # Make a path through a directoty to a file
+file_put_contents($path, "Hello from PHP file I/O\n"); # Get a file and write inside it
+$contents = file_get_contents($path); # Store contents
+echo $contents; # Print out contents
+
+// To serve this folder locally, run in a shell, not inside this script
+// php -S localhost:8000 -t docs
+
+/* This is commented out to avoid issues
+
 $pdo = new PDO("mysql:host=localhost;dbname=testdb", "root", ""); // This adds a database to your program
 
 $stmt = $pdo->query("SELECT * FROM users"); // This selects one one of the databases
 
 if ($stmt) { // Only iterate if the query succeeded
     while ($row = $stmt->fetch()) {
-        echo $row['name'] . "<br>"; // Iterates through each database
+        echo $row['name'] . "<br>"; // Iterate through each database
     }
 } else {
     print_r($pdo->errorInfo()); // Allows error visibility

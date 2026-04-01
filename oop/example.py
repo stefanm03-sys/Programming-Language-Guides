@@ -2,6 +2,10 @@
 """
 This is a multi-line comment. The code in the triple quotes is ignored
 """
+x = 1 # This assigns a variable, here is a numeric value
+y = "str" # Assign a string
+z = True # Or a booleans
+
 
 # This is a variable that stores a number and prints it to the console
 num = input("Enter a number: ") # num is the variable. input() is the user input to be accepted
@@ -19,7 +23,7 @@ for i in range(6): # This is a loop that will run 6 times. i is the variable tha
 % indicates that the remainder from division is returned instead of the value of division from two values
 """
 
-def add_numbers(a=None, b=None): # This is a function that takes two parameters, a and b
+def add_numbers(a, b): # This is a function that takes two parameters, a and b
     if a is None or b is None:
         a = input("Enter the first number, a: ") # This prompts the user to enter the first number and stores it in variable a
         b = input("Enter the second number, b: ") # This prompts the user to enter the second number and stores it in variable b
@@ -73,7 +77,7 @@ for creature in animals: # Loop over each animal in said list
 
 #
 
-from enum import Enum # Imports enum, which are basically consist variables
+from enum import Enum # Imports enum, which are basically consistent variables
 
 class AccessLevel(Enum): # Simple enum example
     GUEST = 0
@@ -97,7 +101,7 @@ async def fetch_message(): # Async coroutine definition
 def safe_divide(a, b): # Defines a function with error handling
     try: # Executes as normal
         return a / b # Divide this
-    except ZeroDivisionError as exc: # Catch divide-by-zero # If an error with a zero division ocurrs, the except block prints the error
+    except ZeroDivisionError as exc: # Catch divide-by-zero error. If an error with a zero division ocurrs, the except block prints the error
         print(f"Caught error: {exc}") # Uses f"str: {exc}" to return a console output
         return None
 
@@ -111,5 +115,114 @@ def main(): # Define a main entry point
     message = asyncio.run(fetch_message())
     print(message) # Prints the result of the method
 
-if __name__ == "__main__": # Entry point guard # Unsure 
+if __name__ == "__main__": # Entry point guard for the continuing commands
     main()
+
+# ---
+# This point on is server and OS functions
+# ---
+
+import pathlib # Enable file exploring
+import http.server # Allow servers
+import socketserver
+
+def write_demo_file(path="demo.txt"): # Write a file using a function
+    pathlib.Path(path).write_text("Hello from Python file I/O!\n") # Writes the file using the path
+
+def read_demo_file(path="demo.txt"): # Search for the file using a function
+    if pathlib.Path(path).exists(): # Checks if it exists
+        return pathlib.Path(path).read_text() # Search for the file 
+    return "No file found."
+
+def run_simple_server(port=8000): # Define a function to start a server
+    handler = http.server.SimpleHTTPRequestHandler # Make an HTTP handler. the handler = http.server. makes the variable the server
+    with socketserver.TCPServer(("", port), handler) as httpd: # Get the server, port
+        print(f"Serving HTTP on port {port} (Ctrl+C to stop)") # Print out the text and port. Use Ctrl+C to stop
+        httpd.serve_forever() 
+
+# write_demo_file(); print(read_demo_file())  # These are examples, and have been commented out to avoid side effects
+# run_simple_server()  # Starts an HTTP server serving current directory
+
+# ---
+# This is a lexer, tokenizer, interpreter
+# expr -> NUMBER (('+'|'-') NUMBER)*
+# Tokens are these NUMBER, PLUS, MINUS strings
+# ---
+
+from typing import List, Tuple, Union
+# Import these
+
+Token = Tuple[str, str] # (type, lexeme)
+
+# Tokenizing
+def tokenize(src: str) -> List[Token]: # Get the tokenizer from the import, and tokenize the source
+    tokens: List[Token] = [] # List the tokens. They are strings
+    i = 0 # Define i
+    while i < len(src): # Iterate through the source
+        ch = src[i] 
+        if ch.isspace(): # Whitespace
+            i += 1
+            continue
+        if ch.isdigit(): # Get a number
+            start = i
+            while i < len(src) and src[i].isdigit():
+                i += 1
+            tokens.append(("NUMBER", src[start:i]))
+            continue
+        if ch == '+': # Gets the plus sign
+            tokens.append(("PLUS", ch))
+            i += 1
+            continue
+        if ch == '-': # Gets the minus sign
+            tokens.append(("MINUS", ch))
+            i += 1
+            continue
+        raise ValueError(f"Unexpected character: {ch}") # Return an error if found
+    return tokens # Return the current tokend
+
+# Parsing
+def eval_expr(tokens: List[Token]) -> int:
+    index = 0 # This is hard to explain, but the function will evaluate the tokens and convert them using a parser and interpreter
+
+    def expect_number() -> int: # This expects a numbrr
+        nonlocal index
+        if index >= len(tokens) or tokens[index][0] != "NUMBER": # Use the tokens to find numbers
+            raise ValueError("Expected a number") # Raise an error
+        value = int(tokens[index][1]) # Force the tokens into numbers
+        index += 1
+        return value
+
+    def parse_term() -> int: # Parse the term into a number using expect_number()
+        return expect_number()
+
+    def parse_expr() -> int: # Parse the numeric expression
+        nonlocal index
+        value = parse_term() # Parse it
+        while index < len(tokens) and tokens[index][0] in ("PLUS", "MINUS"): # Iterate the index of tokens
+            op = tokens[index][0] # Get tokens
+            index += 1
+            right = parse_term() # Parse the terms again
+            if op == "PLUS":
+                value += right
+                # Add it
+            else:
+                value -= right
+                # Subtract it
+        return value
+
+    result = parse_expr()
+    if index != len(tokens): # Check for invalid index
+        raise ValueError("Unexpected input at end")
+    return result
+
+# Interpreting
+def interpret(src: str) -> Union[int, str]: # Evaluate the tokens and return them
+    try:
+        toks = tokenize(src) # Get the tokens
+        return eval_expr(toks) 
+    except Exception as exc: # Error handling for bad input
+        return f"Error: {exc}" 
+
+# Examples
+# print(interpret("1 + 2 - 3"))
+# print(interpret("10 + x"))  # Will return an error
