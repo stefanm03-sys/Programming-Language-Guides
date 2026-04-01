@@ -49,6 +49,18 @@ calc() { # A simple calculator function
 
 calc "*" 5 2 # This calls the function with the parameters
 
+#
+
+select choice in Start Stop Restart Quit; do case $choice in # Begin a selection of items using the items in this line
+    Start) echo "Starting" ;;
+    Stop) echo "Stopping" ;;
+    Restart) echo "Restarting" ;;
+    Quit) echo "Quitting"; break ;;
+    *) echo "Not an option!" ;;
+    esac # Escape the program
+done # Mark it as complete
+
+
 : <<'EXAMPLES' # This is a example block, not meant to execute. This is here to avoid system issues
 Below are commands for running CLI programs using shell commands.
 These -(flags) and --(long flags) modify the commands and are generally the same for each bash command, but some are unique.

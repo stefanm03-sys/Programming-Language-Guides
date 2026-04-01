@@ -1,6 +1,10 @@
 # Programming Language Guides
 A MVS repo for Coding. This has guides to assist in understanding the programs and code. View each file and read the comments for a short, understandable guide!
 
+npm install github:stefanm03-sys/master
+- This is the npm install.
+
+
 Essentials
 - booleans are always true or false (can be case sensitive like True or False). They cannot be ANY OTHER VALUE. Keywords similar to those are NOT booleans.
 - int (integer/whole number) are always numbers without decimals, including negatives.
@@ -19,6 +23,7 @@ Common Comment Examples
 -- This is a comment too! 
 
 --[[ This is a comment. ]]--
+
 /* This, however, is a comment. */
 
 

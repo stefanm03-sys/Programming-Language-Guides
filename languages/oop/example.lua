@@ -135,7 +135,7 @@ local function fetch_message() -- Async function routine
 end
 
 local co = coroutine.create(fetch_message) -- First await
-local ok, pauseMsg = coroutine.resume(co) - Second await
+local ok, pauseMsg = coroutine.resume(co) -- First resume, gets yielded value
 print(pauseMsg) -- First await
 local ok2, finalMsg = coroutine.resume(co) -- Second resume, gets return value
 print(finalMsg) -- Second await
