@@ -23,14 +23,14 @@ def quotient(a, b) # Define a function
   print("Calculating..")
   if a.nil? || b.nil? # Primary condition
     # Use .nil? to recognize a blank value in a condition, or nil in assignment
-    # Use || to indicate the or operation
+    # Use || to indicate the 'or' operation
     print("Please give me values!")
   elsif !a.is_a?(Integer) || !b.is_a?(Integer) # Failsafe condition
     # Use elsif for a failsafe condition
     # Use !var.is_var?(Integer) to recognize the data provided, the ! is the inequal operation
     print("Please provide integers!")
   else # Failsafe to run
-    print("Quotient is: #{a / b}")
+    print("Quotient is: #{a / b}") # Use #{} to add variables into strings
   end
 end
 
@@ -52,7 +52,7 @@ class Credentials # Classes in Ruby are much simpler and easy to use
   def signup
     print("Welcome! Provide sign up credentials:")
     print("Username: ")
-    @uname = gets&.chomp # Ask for input from the user
+    @uname = gets&.chomp # Ask for input from the user using a previous print and setting a variable equal to gets&.chomp 
     print("Password: ")
     @pass = gets&.chomp
     login # Call the method in your class
@@ -60,5 +60,6 @@ class Credentials # Classes in Ruby are much simpler and easy to use
 
 end
 
-e = Credentials.new("person", "pass") # Make a new subclass of the main class
-puts e.signup # Call the method from a class on a specific variable
+e = Credentials.new("person", "pass") # Make a new assignment derived of the main class
+puts e.signup # Call the method from a class on a specific variable using puts
+print(e)

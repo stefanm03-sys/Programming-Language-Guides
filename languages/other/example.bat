@@ -44,7 +44,7 @@ if %b% LSS %a% (
 echo Numeric loop:
 :: Basic loop example. The first argument is the start value, the second is how much to incrememt, and the last is the times to iterate
 for /l %%i in (1,1,5) do (
-    :: %%i defines the variable in this context
+    :: %%i defines the temporary variable in this context
     echo Step %%i
     :: Print out i
 )

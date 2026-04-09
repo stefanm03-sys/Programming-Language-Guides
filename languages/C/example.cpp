@@ -5,13 +5,13 @@
 #include <fstream>
 
 int modulus(int a, int b) { // Define a simple division function that returns remainder. Should be outside of main() to avoid errors
-    std::cout << "Dividing.." << std::endl;
+    std::cout << "Dividing.." << std::endl; // std::cout << str << prints out a string, << std::endl; ends the line
 
-    if (a == 0 || b == 0) { // Protect against divide by zero
+    if (a == 0 || b == 0) { // Prevents division by zero
         std::cout << "Division by zero! Cannot run." << std::endl;
         return 0; // Return a value
-    } else {
-        int result = a % b; // Calculates remainder. a / b works by default, and it returns what adds up
+    } else { // Otherwise, run like normal
+        int result = a % b; // Calculates remainder. a / b works by default, and it returns the remainder
         std::cout << "Calculated! Remainder is: " << result << std::endl;
         return result;
     }
@@ -46,7 +46,7 @@ int main() { // Define a main method inside the program. int means the program r
 
     if (a > b) { // A simple condition
         std::cout << "a is greater than b" << std::endl; // Prints if true
-    } else {
+    } else { // If the primary condition is false, use this
         std::cout << "a is not greater than b" << std::endl; // Prints if false
     }
 

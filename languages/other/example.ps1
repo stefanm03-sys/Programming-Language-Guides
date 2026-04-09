@@ -2,6 +2,10 @@
 # Powershell only runs on windows devices
 # This specific file may be rushed or incomplete/inconsistent
 
+<#
+This is a multi line comment
+#>
+
 # --
 # Regular Programming
 # --
@@ -26,6 +30,9 @@ foreach ($file in Get-ChildItem) { # Find files and iterate through them
 Get-ChildItem Env: # Get environment variables
 $Env:PATH # Get specified variables
 
+<#
+These are windows functions, and are commented out to avoid side effects
+
 New-Item -ItemType Directory -Path "C:\folder" # Create a new directory
 Get-ChildItem -Path C:\User # List files from a directory
 Get-Content "C:\folder\file.txt\" # Read contents of said directory/file
@@ -48,7 +55,7 @@ Get-Acl "C:\yourfolder" # Get permissions from a directory
 "Int: 12345" -replace "\d", "a" # Replace numbers with a string
 
 Select-String -Path "C:\logs\app.log" -Pattern "error" # Check a file for a pattern
-
+#>
 
 
 
