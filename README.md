@@ -2,7 +2,7 @@
 A MVS repo for Coding. This has guides to assist in understanding the programs and code. View each file and read the comments for a short, understandable guide!
 
 npm install github:stefanm03-sys/master
-- This is the npm install.
+- This is the npm install. (I don't think it work anymore)
 
 
 Essentials
